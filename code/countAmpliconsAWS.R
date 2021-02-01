@@ -69,7 +69,7 @@ results <- read_csv("results.csv") %>%
                 index2 = i2) %>% 
   # left_join(bc_map, by = "sequence") %>% 
   mutate(mergedIndex = paste0(index, index2)) %>% 
-  left_join(ss, by = c("mergedIndex","index","index2"))
+  full_join(ss, by = c("mergedIndex","index","index2"))
 
 
 # Check direction of index 1 before merging w/ 384 plate map
